@@ -2,10 +2,7 @@ package io.github.cursodsousa.produtosapi.controler;
 
 import io.github.cursodsousa.produtosapi.model.Produto;
 import io.github.cursodsousa.produtosapi.repository.ProdutoRepository;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
@@ -30,5 +27,13 @@ public class ProdutoController {
         produtoRepository.save(Produto);
         return Produto;
     }
+    @GetMapping("/{id}")
+    public Produto obterPorId(@PathVariable ("id") String id) {
+        return produtoRepository.findById(id).orElse(null);
+    }
 
+    @DeleteMapping("/{id}")
+    public void deletar(@PathVariable ("id") String id) {
+        produtoRepository.deleteById(id);
+    }
 }
