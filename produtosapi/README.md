@@ -31,6 +31,3 @@ A API estará disponível em `http://localhost:8080`.
 ## Endpoints
 
 * `POST /produtos`: Cria um novo produto.
-  * *Corpo esperado:* `{ "nome": "...", "descricao": "...", "preco": 0.0 }`
-* `GET /produtos/{id}`: Obtém os detalhes de um produto pelo seu ID.
-* `DELETE /produtos/{id}`: Remove um produto do banco de dados pelo seu ID.
